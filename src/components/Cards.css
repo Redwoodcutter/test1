@@ -1,0 +1,127 @@
+.cards-section {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: #001d33;
+    margin-top: -200px;
+    /* Parallax Arka Plan */
+    background: url('../../public/images/2.png') no-repeat center center / cover;
+    background-color: #001d33; /* Ellipse dışındaki alanın rengi */
+    clip-path: ellipse(100% 100% at 50% 100%);
+    background-attachment: fixed;
+    background-position: center;
+    z-index: -1;
+}
+
+/* Yay Efekti (Cards Section için) */
+.cards-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, #001d33, transparent); /* Yayın dışındaki alanın rengi */
+    z-index: 1;
+}
+
+/* Kartlar */
+.card-container {
+    position: relative;
+    z-index: 3; /* Kartlar yay ve arka planın üzerinde olacak */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 10px;
+    height: 100%;
+    transition: transform 0.3s ease;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-logo {
+    max-width: 100px;
+    margin: 0 auto;
+    display: block;
+}
+
+.card-description {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-tags {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.card-tag {
+    background: linear-gradient(90deg, #5e3aee, #7a4fff);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* Tablet ve Küçük PC Uyumluluğu */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card-container {
+        justify-content: center;
+    }
+
+    .card {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+/* Mobil Uyumluluk */
+@media (max-width: 767px) {
+    .cards-section {
+        margin-top: -270px;
+        padding: 50px ,20px;
+        height: 55%; /* Mobil için daha kısa bir height */
+    }
+
+    .card-container {
+        flex-direction: column; /* Mobilde kartlar dikey olacak */
+        align-items: center;
+    }
+
+    .card {
+        max-width: 90%;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+
+    .card-logo {
+        max-width: 80px; /* Mobilde logo boyutu küçülecek */
+    }
+
+    .card-description {
+        font-size: 0.9rem; /* Mobilde yazı boyutu küçülecek */
+    }
+
+    /* Android Telefonlar (max-width: 480px) */
+@media (max-width: 480px) {
+    .cards-section {
+        margin-top: -290px;
+        padding: 50px ,20px;
+        height: 55%; /* Mobil için daha kısa bir height */
+    }
+}
+}

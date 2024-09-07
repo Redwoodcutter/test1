@@ -1,38 +1,43 @@
-.App {
-  text-align: center;
+/* Navbar */
+.header-navbar {
+  background-color: #001d33; /* Arka plan rengi */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 18px;
+  color: #ffffff !important;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.header-navbar .navbar-brand:hover {
+  color: #ffffff !important;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header-navbar .navbar-nav .nav-link {
+  font-weight: 600;
+  font-size: 16px;
+  color: #ffffff;
+  margin-right: 1rem;
 }
 
-.App-link {
-  color: #61dafb;
+.header-navbar .navbar-nav .nav-link:hover {
+  color: #ffffff !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-navbar .navbar-nav .nav-link.active {
+  color: #8f00ff;
+}
+
+.header-navbar .header-button {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 30px;
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.header-navbar .header-button:hover {
+  background-color: #8f00ff;
+  border-color: #8f00ff;
 }
